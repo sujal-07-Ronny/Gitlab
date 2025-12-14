@@ -1,0 +1,814 @@
+## Index 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionaries: Mr Steve Jobs & Mr Warren Buffett</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent-jobs: #e94560;
+            --accent-buffett: #0fce8e;
+            --light: #f9f9f9;
+            --gray: #8a8a8a;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem 0 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 1.8rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-jobs), var(--accent-buffett));
+            transition: var(--transition);
+        }
+        
+        nav a:hover::before {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: var(--accent-jobs);
+        }
+        
+        nav a i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        section {
+            margin-bottom: 6rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 4rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-jobs), var(--accent-buffett));
+        }
+        
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 15px;
+            font-size: 2.2rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+        }
+        
+        .jobs h2::after {
+            background-color: var(--accent-jobs);
+        }
+        
+        .buffett h2::after {
+            background-color: var(--accent-buffett);
+        }
+        
+        #comparison h2::after {
+            background: linear-gradient(90deg, var(--accent-jobs), var(--accent-buffett));
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .quote {
+            font-style: italic;
+            border-left: 4px solid;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            font-size: 1.2rem;
+            color: #444;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        
+        .jobs .quote {
+            border-left-color: var(--accent-jobs);
+            background: rgba(233, 69, 96, 0.05);
+        }
+        
+        .buffett .quote {
+            border-left-color: var(--accent-buffett);
+            background: rgba(15, 206, 142, 0.05);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--accent-jobs), var(--accent-buffett));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-top: 4px solid;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+        
+        .jobs .timeline-content {
+            border-top-color: var(--accent-jobs);
+        }
+        
+        .buffett .timeline-content {
+            border-top-color: var(--accent-buffett);
+        }
+        
+        .timeline-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            border: 4px solid;
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+            box-shadow: 0 0 0 4px white;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        .jobs .timeline-item::after {
+            border-color: var(--accent-jobs);
+        }
+        
+        .buffett .timeline-item::after {
+            border-color: var(--accent-buffett);
+        }
+        
+        /* Comparison Section */
+        #comparison {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .philosophy-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+        
+        .jobs-card::before {
+            background: var(--accent-jobs);
+        }
+        
+        .buffett-card::before {
+            background: var(--accent-buffett);
+        }
+        
+        .philosophy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .philosophy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .philosophy-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .philosophy-card ul {
+            list-style: none;
+        }
+        
+        .philosophy-card li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        
+        .philosophy-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-jobs);
+            font-weight: bold;
+        }
+        
+        .buffett-card li::before {
+            color: var(--accent-buffett);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-jobs);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent-buffett);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            section {
+                padding: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                justify-content: center;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Visionaries of Our Time</h1>
+            <p class="subtitle">Exploring the lives and philosophies of Steve Jobs and Warren Buffett, two individuals who reshaped technology and finance through their unique perspectives and relentless pursuit of excellence.</p>
+            <div class="header-badge">
+                <i class="fas fa-lightbulb"></i> Innovation Meets Value
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#steve-jobs"><i class="fas fa-apple-alt"></i> Steve Jobs</a></li>
+            <li><a href="#warren-buffett"><i class="fas fa-chart-line"></i> Warren Buffett</a></li>
+            <li><a href="#comparison"><i class="fas fa-balance-scale"></i> Their Philosophies</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="steve-jobs" class="jobs fade-in">
+            <h2><i class="fas fa-apple-alt"></i> Steve Jobs: The Visionary of Silicon Valley</h2>
+            <p>Steven Paul Jobs (1955-2011) was an American business magnate, industrial designer, investor, and media proprietor. He was the chairman, chief executive officer (CEO), and co-founder of Apple Inc., the chairman and majority shareholder of Pixar, and the founder, chairman, and CEO of NeXT.</p>
+            
+            <div class="quote">
+                "Innovation distinguishes between a leader and a follower."
+            </div>
+            
+            <p>Jobs was born in San Francisco to a Syrian father and German-American mother. He was adopted shortly after his birth. Jobs attended Reed College in 1972 before dropping out that same year, and traveled through India in 1974 seeking enlightenment and studying Zen Buddhism.</p>
+            
+            <h3><i class="fas fa-road"></i> Key Milestones</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1976</h4>
+                        <p>Co-founded Apple Computer with Steve Wozniak and Ronald Wayne in his parents' garage.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1984</h4>
+                        <p>Introduced the Macintosh, the first commercially successful personal computer with a graphical user interface.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1985</h4>
+                        <p>Resigned from Apple and founded NeXT Computer.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1997</h4>
+                        <p>Returned to Apple as CEO and began the company's remarkable turnaround.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2001</h4>
+                        <p>Introduced the iPod, revolutionizing the music industry.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2007</h4>
+                        <p>Launched the iPhone, creating the modern smartphone industry.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Jobs' philosophy centered on the intersection of technology and the liberal arts. He believed in creating products that were not just functional but beautifully designed and intuitive to use. His attention to detail and insistence on perfection revolutionized multiple industries including personal computing, animated films, music, phones, tablet computing, and digital publishing.</p>
+            
+            <div class="quote">
+                "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do."
+            </div>
+        </section>
+        
+        <section id="warren-buffett" class="buffett fade-in">
+            <h2><i class="fas fa-chart-line"></i> Warren Buffett: The Oracle of Omaha</h2>
+            <p>Warren Edward Buffett (born 1930) is an American business magnate, investor, and philanthropist. He is considered one of the most successful investors in the world and has a net worth of over $100 billion, making him the world's sixth-wealthiest person.</p>
+            
+            <div class="quote">
+                "Rule No. 1: Never lose money. Rule No. 2: Never forget rule No. 1."
+            </div>
+            
+            <p>Buffett was born in Omaha, Nebraska. He developed an interest in business and investing in his youth, eventually entering the Wharton School of the University of Pennsylvania in 1947 before transferring to the University of Nebraska. He later earned a master's degree in economics from Columbia Business School.</p>
+            
+            <h3><i class="fas fa-road"></i> Key Milestones</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1956</h4>
+                        <p>Founded Buffett Partnership Ltd. in Omaha with $100 of his own money and $105,000 from seven limited partners.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1962</h4>
+                        <p>Began purchasing shares of Berkshire Hathaway, a struggling textile manufacturing firm.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1965</h4>
+                        <p>Took control of Berkshire Hathaway and began transforming it into a holding company.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1973</h4>
+                        <p>Began acquiring stock in The Washington Post Company, forming a close friendship with Katharine Graham.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1988</h4>
+                        <p>Began purchasing Coca-Cola stock, eventually building a position worth over $1 billion.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2006</h4>
+                        <p>Announced he would give away 85% of his Berkshire stock to philanthropic foundations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Buffett is known for his adherence to value investing and his personal frugality despite his immense wealth. His investment philosophy stresses understanding the business you're investing in, favoring long-term holdings, and focusing on intrinsic value rather than market trends.</p>
+            
+            <div class="quote">
+                "It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price."
+            </div>
+            
+            <p>In 2010, Buffett and Bill Gates founded The Giving Pledge, whereby they and other billionaires pledge to give away at least half of their wealth to philanthropic causes. Buffett has pledged to give away 99% of his fortune.</p>
+        </section>
+        
+        <section id="comparison" class="fade-in">
+            <h2><i class="fas fa-balance-scale"></i> Contrasting Philosophies</h2>
+            <p>While Steve Jobs and Warren Buffett operated in completely different industries, both achieved extraordinary success through their unique approaches and philosophies.</p>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-card jobs-card">
+                    <h3><i class="fas fa-apple-alt"></i> Steve Jobs' Approach</h3>
+                    <ul>
+                        <li><strong>Focus on Innovation:</strong> Constantly pushing boundaries and creating products that didn't previously exist</li>
+                        <li><strong>Design-Centric:</strong> Believed that form and function were equally important</li>
+                        <li><strong>Intuition Over Data:</strong> Famously stated that customers don't know what they want until you show it to them</li>
+                        <li><strong>Disruption:</strong> Sought to upend existing industries with revolutionary products</li>
+                    </ul>
+                </div>
+                
+                <div class="philosophy-card buffett-card">
+                    <h3><i class="fas fa-chart-line"></i> Warren Buffett's Approach</h3>
+                    <ul>
+                        <li><strong>Value Investing:</strong> Focused on finding undervalued companies with strong fundamentals</li>
+                        <li><strong>Long-Term Perspective:</strong> Famous for saying his favorite holding period is "forever"</li>
+                        <li><strong>Rational Decision Making:</strong> Emphasized making investment decisions based on careful analysis rather than emotion</li>
+                        <li><strong>Stability Over Disruption:</strong> Preferred businesses with durable competitive advantages</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Despite their different approaches, both shared key traits: intense focus, conviction in their strategies, and the ability to think independently from the crowd. Both also demonstrated that success comes not just from intelligence but from discipline, patience, and a clear philosophy.</p>
+            
+            <div class="quote">
+                "The difference between successful people and really successful people is that really successful people say no to almost everything." - Warren Buffett
+            </div>
+            
+            <div class="quote">
+                "Simple can be harder than complex: You have to work hard to get your thinking clean to make it simple. But it's worth it in the end because once you get there, you can move mountains." - Steve Jobs
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Tribute to Steve Jobs & Warren Buffett</p>
+            <p>Created as a sample project for GitLab deployment</p>
+            <p>No images used in accordance with project requirements</p>
+            
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        // Initial check in case elements are already in view
+        fadeInOnScroll();
+    </script>
+</body>
+</html>
+
+##YML 
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp index.html public/
+    
+  artifacts:
+    paths:
+      - public
